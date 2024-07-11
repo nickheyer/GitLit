@@ -3,7 +3,7 @@
   "displayName": "GitLit",
   "description": "When you need to view multiple branches of a project at the same time (and without all the BS)!",
   "version": "0.0.1",
-  "publisher": "Heyer.App",
+  "publisher": "NicholasHeyer",
   "repository": {
     "type": "git",
     "url": "https://github.com/nickheyer/gitlit.git"
