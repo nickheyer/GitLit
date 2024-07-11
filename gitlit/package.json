@@ -3,6 +3,7 @@
   "displayName": "GitLit",
   "description": "When you need to view multiple branches of a project at the same time (and without all the BS)!",
   "version": "0.0.1",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.91.0"
   },
@@ -14,10 +15,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "gitlit.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "extension.compareWithBranch",
         "title": "Compare with Branch"
       }
@@ -27,7 +24,7 @@
         {
           "id": "compareWithBranchContainer",
           "title": "Compare",
-          "icon": "media/icon.png"
+          "icon": "media/taskbarIcon.png"
         }
       ]
     },
@@ -41,8 +38,8 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "node ./extension.js"
+    "vscode:prepublish": "npm install",
+    "start": "node ./extension.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.7",

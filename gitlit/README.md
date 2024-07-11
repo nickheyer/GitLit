@@ -1,65 +1,91 @@
-# gitlit README
+# GitLit
 
-This is the README for your extension "gitlit". After writing up a brief description, we recommend including the following sections.
+GitLit is a powerful VSCode extension designed to streamline your Git workflow. It simplifies the process of comparing code across different branches within the same project, providing a seamless experience for developers who need to review changes side by side.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Compare Branches Side by Side**: Open the same project in multiple VSCode windows to easily compare different branches.
+- **Progress Reporting**: Get real-time progress updates while cloning repositories, fetching branches, and checking out branches.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+### Prerequisites
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Node.js**: Make sure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
 
-## Requirements
+### From the Marketplace
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Open VSCode.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for "GitLit".
+4. Click "Install".
 
-## Extension Settings
+### From a VSIX File
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Download the latest `.vsix` file from the [releases page](#).
+2. Open VSCode.
+3. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+4. Click on the three dots (...) at the top right of the Extensions view.
+5. Choose "Install from VSIX..." and select the `.vsix` file you downloaded.
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+1. Open your project in VSCode.
+2. Open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
+3. Type `GitLit: Compare with Branch` and press `Enter`.
+4. Enter the name of the branch you want to compare with and press `Enter`.
+5. A new VSCode window will open with the specified branch checked out, and progress will be reported in real-time.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Example
 
-## Known Issues
+Here is an example of how to use GitLit to compare two branches:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Open your project in VSCode.
+2. Open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
+3. Run the `GitLit: Compare with Branch` command.
+4. Enter `feature-branch` as the branch to compare with.
+5. GitLit will clone the repository, fetch the branches, and check out `feature-branch` in a new window.
 
-## Release Notes
+## Development
 
-Users appreciate release notes as you update your extension.
+### Prerequisites
 
-### 1.0.0
+- **Node.js**: Make sure you have Node.js installed.
+- **vsce**: Install the Visual Studio Code Extension Manager using npm:
+    ```sh
+    npm install -g vsce
+    ```
 
-Initial release of ...
+### Build and Install from Source
 
-### 1.0.1
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/gitlit.git
+    cd gitlit
+    ```
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
+3. Package the extension:
+    ```sh
+    vsce package
+    ```
+4. Install the generated `.vsix` file in VSCode:
+    - Open VSCode.
+    - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+    - Click on the three dots (...) at the top right of the Extensions view.
+    - Choose "Install from VSIX..." and select the generated `.vsix` file.
 
-Fixed issue #.
+## Contributing
 
-### 1.1.0
+Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure your code adheres to the project's coding standards and includes appropriate tests.
 
-Added features X, Y, and Z.
+## License
 
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Working with Markdown
+## Acknowledgments
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Special thanks to the [simple-git](https://github.com/steveukx/git-js) library for simplifying Git operations.
+- Thanks to the VSCode team for their excellent documentation and APIs.
