@@ -1,0 +1,61 @@
+{
+  "name": "gitlit",
+  "displayName": "GitLit",
+  "description": "When you need to view multiple branches of a project at the same time (and without all the BS)!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitlit.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "extension.compareWithBranch",
+        "title": "Compare with Branch"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "compareWithBranchContainer",
+          "title": "Compare",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "compareWithBranchContainer": [
+        {
+          "id": "compareWithBranchView",
+          "name": "Compare with Branch"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "node ./extension.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.91.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "simple-git": "^3.25.0",
+    "tmp": "^0.2.3"
+  }
+}
